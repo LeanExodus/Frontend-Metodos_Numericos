@@ -2,6 +2,7 @@ import { AppContext } from '@/components/context/appContext'
 import { SessionContext } from '@/components/context/sessionContext'
 import {  Landing } from '@/components/public/Landing'
 import { LoginForm } from '@/components/public/LoginForm'
+import Head from 'next/head'
 
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect} from 'react'
@@ -23,7 +24,11 @@ const Index = () => {
 
    
     return (
-
+        <>
+        <Head>
+            <title>Iniciar sesión</title>
+        </Head>
+        
         <main className="h-screen grid content-center">
             <div className="">
            
@@ -32,6 +37,7 @@ const Index = () => {
                 </div>
             </div>
         </main>
+        </>
     )
 }
 

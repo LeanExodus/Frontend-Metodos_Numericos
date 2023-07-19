@@ -4,7 +4,7 @@ import { Landing } from "@/components/public/Landing"
 import { RegisterForm } from "@/components/public/RegisterForm"
 import { useRouter } from "next/router"
 import { useContext, useEffect } from "react"
-
+import Head from 'next/head'
 
 export default function Home() {
  
@@ -20,7 +20,11 @@ export default function Home() {
     setLoading(false)
   }, [isLogged, router, setLoading])
   return (
-
+    <>
+    <Head>
+        <title>Crear Usuario</title>
+    </Head>
+   
     <main className="h-screen grid content-center">
       <div className="">
         
@@ -30,5 +34,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   )
 }

@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { errorModal } from '@/helpers/modals'
 import { NavBar } from '@/components/app/NavBar'
+import Head from 'next/head'
 const App = () => {
     const { setLoading } = useContext(AppContext)
     const { isLogged, jwt } = useContext(SessionContext)
@@ -55,7 +56,10 @@ const App = () => {
     }
 
     return (
-        <div>
+        <>
+            <Head>
+                <title>Método Secante</title>
+            </Head>
             <NavBar />
 
             <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 ">
@@ -132,7 +136,7 @@ const App = () => {
             </div>
       
                     
-        </div>
+        </>
             
     )
 }
