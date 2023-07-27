@@ -21,12 +21,9 @@ export const Landing = () => {
         <>
         <div className="bg-white py-24 sm:py-32 text-center">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
-               
                 
-                </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                <dl className="grid max-w-xl grid-cols-1 gap-x-24 gap-y-40 lg:max-w-none lg:grid-cols-2 lg:gap-y-16 ">
                     {metodos.map((metodo) => (
                     <div key={metodo.nombre} className="relative pl-16">
                         <div className="mx-auto left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"></div>
