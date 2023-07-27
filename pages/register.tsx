@@ -1,6 +1,5 @@
 import { AppContext } from "@/components/context/appContext"
 import { SessionContext } from "@/components/context/sessionContext"
-import { Landing } from "@/components/public/Landing"
 import { RegisterForm } from "@/components/public/RegisterForm"
 import { useRouter } from "next/router"
 import { useContext, useEffect } from "react"

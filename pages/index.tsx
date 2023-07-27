@@ -1,6 +1,5 @@
 import { AppContext } from '@/components/context/appContext'
 import { SessionContext } from '@/components/context/sessionContext'
-import {  Landing } from '@/components/public/Landing'
 import { LoginForm } from '@/components/public/LoginForm'
 import Head from 'next/head'
 
