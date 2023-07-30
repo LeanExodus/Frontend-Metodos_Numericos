@@ -107,8 +107,8 @@ export const SecantForm = () => {
                                         {rows.map((row) => <tr key={row.iteration}>
                                         
                                             <td className="w-1/3 text-left py-3 px-4">{row.iteration}</td>
-                                            <td className="w-1/3 text-left py-3 px-4">{parseFloat(row.result).toFixed(4)}</td>
-                                            <td className="w-1/3 text-left py-3 px-4">{parseFloat(row.error).toFixed(2)}{'%'}</td>
+                                            <td className="w-1/3 text-left py-3 px-4">{parseFloat(row.result).toFixed(6)}</td>
+                                            <td className="w-1/3 text-left py-3 px-4">{parseFloat(row.error).toFixed(4)}{'%'}</td>
 
                                         </tr>)}
                                         </tbody>
