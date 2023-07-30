@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { NavBar } from '@/components/app/NavBar'
-import { NewtonForm } from '@/components/public/nextonForm'
+import { NewtonForm } from '@/components/public/NewtonForm'
 
 const Newton = () => {
     const { setLoading } = useContext(AppContext)
@@ -24,8 +24,9 @@ const Newton = () => {
         <>
             <Head>
                 <title>Método Newton Raphson</title>
+                
             </Head>
-            <NavBar />
+            <NavBar />  
 
             <NewtonForm/>
            

@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from 'react'
 
 import { NavBar } from '@/components/app/NavBar'
 import Head from 'next/head'
-import { SecantForm } from '@/components/public/secantForm'
+import { SecantForm } from '@/components/public/SecantForm'
 const Secant = () => {
     const { setLoading } = useContext(AppContext)
     const { isLogged } = useContext(SessionContext)
