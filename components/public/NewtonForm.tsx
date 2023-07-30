@@ -3,12 +3,19 @@ import { AppContext } from '../context/appContext'
 import { SessionContext } from '@/components/context/sessionContext'
 import { errorModal } from '@/helpers/modals'
 import axios from 'axios'
+import Geogebra from 'react-geogebra'
 
 export const NewtonForm = () => {
     const { setLoading } = useContext(AppContext)
     const { jwt } = useContext(SessionContext)
     const form = useRef<HTMLFormElement | null>(null)
     const [rows, setRows] = useState<Row[]>([])
+
+    const [geogebraReady, setGeogebraReady] = useState<boolean>(false)
+
+    const geogebraReadyHandler = () => {
+        setGeogebraReady(true);
+      };
 
     const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault()
@@ -32,6 +39,11 @@ export const NewtonForm = () => {
 
             if (resp.status == 200) {
                 setRows(resp.data)
+
+                if (geogebraReady === true) {
+                    const app = window.ggbApplet
+                    app.evalCommand(`f(x)=${func}`)
+                  }
             }
         }
         catch (error) {
@@ -109,10 +121,25 @@ export const NewtonForm = () => {
                             </div>
                         )
                     }
-                </div>
-            </div>
 
-            
+                    <div className="w-full max-w-6xl flex flex-col justify-center items-center">
+                        <h1 className="text-lg py-1">Gráfico</h1>
+                            <div className="py-3">
+                                <Geogebra
+                                appName={'graphing'}
+                                width={800}
+                                height={400}
+                                showMenuBar={false}
+                                showToolBar={false}
+                                showAlgebraInput={false}
+                                onReady={geogebraReadyHandler}
+                                LoadComponent={() => <h1>Cargando...</h1>}                            
+                                />
+                            </div>
+                    </div>
+
+                </div>
+            </div>   
         </>
     )
 }

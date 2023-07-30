@@ -3,3 +3,9 @@ interface Row {
   result: string;
   error: string;
 }
+
+
+interface Window{
+  ggbApplet : any;
+}
+

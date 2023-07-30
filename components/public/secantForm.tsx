@@ -3,6 +3,7 @@ import { AppContext } from '../context/appContext'
 import { SessionContext } from '@/components/context/sessionContext'
 import { errorModal } from '@/helpers/modals'
 import axios from 'axios'
+import Geogebra from 'react-geogebra'
 
 
 export const SecantForm = () => {
@@ -10,6 +11,14 @@ export const SecantForm = () => {
     const { jwt } = useContext(SessionContext)
     const form = useRef<HTMLFormElement | null>(null)
     const [rows, setRows] = useState<Row[]>([])
+
+    const [geogebraReady, setGeogebraReady] = useState<boolean>(false)
+
+    const geogebraReadyHandler = () => {
+        setGeogebraReady(true);
+      };
+    
+      
 
     const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault()
@@ -35,6 +44,11 @@ export const SecantForm = () => {
 
             if (resp.status == 200) {
                 setRows(resp.data)
+
+                if (geogebraReady === true) {
+                    const app = window.ggbApplet
+                    app.evalCommand(`f(x)=${func}`)
+                  }
             }
         }
         catch (error) {
@@ -64,16 +78,11 @@ export const SecantForm = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="xa" className="block text-sm font-medium leading-6 text-gray-900">Primer punto</label>
-                            <div className="mt-2">
-                                <input type='text' className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6 pl-[13px]' placeholder='X' name='xa' id='xa' />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label htmlFor="xb" className="block text-sm font-medium leading-6 text-gray-900">Segundo punto</label>
-                            <div className="mt-2">
-                                <input type='text' className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6 pl-[13px]' placeholder='Y' name='xb' id='xb' />
+                            <label htmlFor="xa" className="block text-sm font-medium leading-6 text-gray-900">Intervalo</label>
+                            <div className="mt-2 grid grid-cols-2 gap-4">
+                                <input type='text' className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6 pl-[13px]' placeholder='a' name='xa' id='xa' />
+                                
+                                <input type='text' className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xl sm:leading-6 pl-[13px]' placeholder='b' name='xb' id='xb' />
                             </div>
                         </div>
 
@@ -118,6 +127,22 @@ export const SecantForm = () => {
                             </div>
                         )
                     }
+
+                    <div className="w-full max-w-6xl flex flex-col justify-center items-center">
+                        <h1 className="text-lg py-1">Gráfico</h1>
+                            <div className="py-3">
+                                <Geogebra
+                                appName='graphing'
+                                width={800}
+                                height={400}
+                                showMenuBar={false}
+                                showToolBar={false}
+                                showAlgebraInput={false}
+                                onReady={geogebraReadyHandler}
+                                LoadComponent={() => <h1>Cargando...</h1>} 
+                                />
+                            </div>
+                    </div>
 
                 </div>
             </div>
