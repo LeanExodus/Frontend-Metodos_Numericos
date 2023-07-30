@@ -126,6 +126,7 @@ export const NewtonForm = () => {
                         <h1 className="text-lg py-1">Gráfico</h1>
                             <div className="py-3">
                                 <Geogebra
+                                id={''}
                                 appName={'graphing'}
                                 width={800}
                                 height={400}
@@ -133,7 +134,8 @@ export const NewtonForm = () => {
                                 showToolBar={false}
                                 showAlgebraInput={false}
                                 onReady={geogebraReadyHandler}
-                                LoadComponent={() => <h1>Cargando...</h1>}                            
+                                LoadComponent={() => <h1>Cargando...</h1>}  
+                                appletOnLoad={function (): void {} }                          
                                 />
                             </div>
                     </div>
