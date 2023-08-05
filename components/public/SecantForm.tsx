@@ -81,7 +81,7 @@ export const SecantForm = () => {
             <div className="flex flex-col min-h-full justify-center px-6 py-12 lg:px-10 ">
 
 
-                <div className="mt-4 mb-24 bg-gray-800 text-white rounded-md text-center">
+                <div className="mt-4 mb-16 bg-gray-800 text-white rounded-md text-center">
                     <h1 className="text-5xl font-bold my-6">Método Secante</h1>
                 </div>
 
