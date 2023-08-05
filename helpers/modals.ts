@@ -1,36 +1,36 @@
 import Swal, { SweetAlertResult } from 'sweetalert2';
 
 let htmlContent = `<ul>
-<li><b>Para el campo de la función se tiene que tomar en cuenta:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por x se debe ingresar el símbolo * antes de la x<br>
-&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa sqrt(<i><b>Numero al cual queremos sacar la raiz</b></i>)</li>
-<li><b>Para los campos del intervalo:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i> Estos campos no son requeridos</i>, ya que si no se ingresan la aplicación calculará el intervalo mediante Bolzano<br>
-&nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos exista una raíz, de lo contrario no se calculará</li>
-<li><b>El campo de la tolerancia:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida<br>
-&nbsp;&nbsp;&nbsp;&#8226 Se recomienda usar valores cercanos a 0<br>
-&nbsp;&nbsp;&nbsp;&#8226 No se admiten valores negativos.</li>
+<li><b>1) Para el campo de la función se tiene que tomar en cuenta:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li>
+<li><b><br>2) Para los campos del intervalo:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i><b> Estos campos no son requeridos</b></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <b>Bolzano.</b><br>
+&nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos <strong>exista</strong> una raíz, de lo contrario <strong>no se calculará.</strong></li>
+<li><b><br>3) El campo de la tolerancia:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida.<br>
+&nbsp;&nbsp;&nbsp;&#8226 Se recomienda usar valores cercanos a <strong>0.</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 <strong>No</strong> se admiten valores negativos.</li>
 </ul>`
 
 let htmlContentNewton =
 
-`<ul>
-En este metodo puedes usar el intervalo o el valor inicial (<i>Si ya sabes el punto medio</i>)
-<li><b>Para el campo de la función se tiene que tomar en cuenta:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por x se debe ingresar el símbolo * antes de la x<br>
-&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa sqrt(<i><b>Numero al cual queremos sacar la raiz</b></i>)</li>
-<li><b>Para el campo de valor inicial:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i> Este campo no es requerido </i><br>
-&nbsp;&nbsp;&nbsp;&#8226 Este campo es dado por la suma de los puntos de intervalo divido entre 2 (<i>Punto Medio</i>)<br>
-&nbsp;&nbsp;&nbsp;&#8226 Usalo solo si tienes conocimiento del punto medio o si el problema te lo indica</li>
-<li><b>Para los campos del intervalo:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i> Estos campos no son requeridos</i>, ya que si no se ingresan la aplicación calculará el intervalo mediante Bolzano<br>
-&nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos exista una raíz, de lo contrario no se calculará</li>
-<li><b>El campo de la tolerancia:</b><br>
-&nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida<br>
-&nbsp;&nbsp;&nbsp;&#8226 Se recomienda usar valores cercanos a 0<br>
-&nbsp;&nbsp;&nbsp;&#8226 No se admiten valores negativos.</li>
+	`<ul>
+&nbsp;&nbsp;&nbsp;&#8226 En este metodo puedes usar el intervalo o el valor inicial (<i>Si ya sabes el punto medio.</i>)<br><br>
+<li><b>1) Para el campo de la función se tiene que tomar en cuenta:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li><br>
+<li><b>2) Para el campo de valor inicial:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i> Este campo no es requerido. </i><br>
+&nbsp;&nbsp;&nbsp;&#8226 Este campo es dado por la suma de los puntos de intervalo divido entre 2 <strong>(<i>Punto Medio</i>).</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 Usalo solo si tienes conocimiento del <strong>punto medio</strong> o si el problema te lo indica.</li><br>
+<li><b>3) Para los campos del intervalo:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i> <strong>Estos campos no son requeridos</strong></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <strong>Bolzano.</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos exista una raíz, de lo contrario no se calculará.</li><br>
+<li><b>4) El campo de la tolerancia:</b><br><br>
+&nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida.<br>
+&nbsp;&nbsp;&nbsp;&#8226 Se recomienda usar valores cercanos a <strong>0.</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 <strong>No</strong> se admiten valores negativos.</li>
 </ul>`
 
 export const errorModal = (text: string) => {
@@ -51,7 +51,7 @@ export const errorModal = (text: string) => {
 export const guideModal = () => {
 
 	Swal.fire({
-		html:htmlContent,
+		html: htmlContent,
 		icon: 'info',
 		width: 1000,
 		confirmButtonText: 'Entendido',
@@ -65,7 +65,7 @@ export const guideModal = () => {
 export const guideModalNewton = () => {
 
 	Swal.fire({
-		html:htmlContentNewton,
+		html: htmlContentNewton,
 		icon: 'info',
 		width: 1000,
 		confirmButtonText: 'Entendido',

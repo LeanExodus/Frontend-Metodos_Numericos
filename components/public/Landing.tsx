@@ -1,50 +1,67 @@
 import React from 'react'
 import Link from 'next/link'
+import { guideModalNewton } from '@/helpers/modals'
+import { guideModal } from '@/helpers/modals'
 
-
-const metodos = [
-    {
-        nombre : 'Método Secante',
-        descripcion: 'El método de la Secante es un método para encontrar los ceros de una función de forma iterativa. Este método está basado en la fórmula de Newton-Raphson',
-        link: 'secant'
-    },
-    {
-        nombre : 'Método Newton Raphson',
-        descripcion: 'El método de Newton Raphson es un procedimiento algorítmico que permite hallar raíces de funciones, conocido un valor numérico cercano a la raíz.',
-        link: 'newton'
-    }
-]
+// const metodos = [
+//     {
+//         nombre: 'Método Secante',
+//         descripcion: 'El método de la Secante es un método para encontrar los ceros de una función de forma iterativa. Este método está basado en la fórmula de Newton-Raphson',
+//         link: 'secant'
+//     },
+//     {
+//         nombre: 'Método Newton Raphson',
+//         descripcion: 'El método de Newton Raphson es un procedimiento algorítmico que permite hallar raíces de funciones, conocido un valor numérico cercano a la raíz.',
+//         link: 'newton'
+//     }
+// ]
 
 
 export const Landing = () => {
     return (
         <>
-        <div className="bg-white py-24 sm:py-32 text-center">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-                <dl className="grid max-w-xl grid-cols-1 gap-x-24 gap-y-40 lg:max-w-none lg:grid-cols-2 lg:gap-y-16 ">
-                    {metodos.map((metodo) => (
-                    <div key={metodo.nombre} className="relative pl-16">
-                        <div className="mx-auto left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600"></div>
-                        <dt className="text-base font-semibold leading-10 text-gray-900 pt-5 text-4xl">
-                          
-                            {metodo.nombre}
-                        </dt>
-                        <dd className="mt-2 text-base leading-7 text-gray-600">{metodo.descripcion}</dd>
+            <section className="bg-gray-100">
 
-                        <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <Link className='rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' href={"/app/" + metodo.link}>Ir al método</Link>
-                            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">Leer más <span aria-hidden="true">→</span></a>
+                <div className=" text-black p-6 justify-center items-center flex flex-col">
+                    <h1 className="text-5xl font-bold mb-5">Métodos de Búsqueda de Raíces</h1>
+                    <p className="text-xl">Explore el método de la Secante y el método de Newton-Raphson</p>
+                </div>
+
+                <div className="container mx-auto flex justify-center items-center min-h-[72vh]">
+                    <div className="grid grid-cols-2 w-[95%] gap-[25px]">
+                        <div className="bg-white p-6 rounded shadow">
+                            <h2 className="text-3xl font-semibold mb-4">Método Secante</h2>
+                            <p className="text-lg">El método de la secante es una técnica numérica para encontrar la raíz de una función de valor real. Es un método iterativo que utiliza una secuencia de aproximaciones a la raíz.</p>
+                            <p className="mt-4 text-lg">La fórmula para la iteración del método de la secante es:</p>
+                            <pre className="bg-gray-800 text-white p-2 rounded mt-2 text-lg">
+                                x[n+1] = x[n] - f(x[n]) * (x[n] - x[n-1]) / (f(x[n]) - f(x[n-1]))
+                            </pre>
+                            <div className="inline-block bg-purple-900 hover:bg-purple-800 text-white rounded-md py-4 px-7 font-medium duration-300 items-center gap-2 mt-10">
+                                <button type='button' onClick={guideModal}> Leer Más... </button>
+                            </div>
+                            <div className="inline-block bg-gray-800 hover:bg-gray-700 text-white rounded-md py-4 px-7 font-medium duration-300 items-center ml-4">
+                                <Link href={"/app/secant"}>Utilizar Método</Link>
+                            </div>
+                        </div>
+
+                        <div className="bg-white p-6 rounded shadow">
+                            <h2 className="text-3xl font-semibold mb-4">Método de Newton-Raphson</h2>
+                            <p className="text-lg">El Método Newton-Raphson es otra técnica iterativa de búsqueda de raíces. Utiliza la derivada de la función para hacer aproximaciones convergentes rápidas a la raíz.</p><br></br>
+                            <p className="mt-4 text-lg">La fórmula de iteración de Newton-Raphson es:</p>
+                            <pre className="bg-gray-800 text-white p-2 rounded mt-2 text-lg">
+                                x[n+1] = x[n] - f(x[n]) / f'(x[n])
+                            </pre>
+                            <div className="inline-block bg-purple-900 hover:bg-purple-800 text-white rounded-md py-4 px-7 font-medium duration-300 items-center gap-2 mt-10">
+                                <button type='button' onClick={guideModalNewton}> Leer Más... </button>
+                            </div>
+                            <div className="inline-block bg-gray-800 hover:bg-gray-700 text-white rounded-md py-4 px-7 font-medium duration-300 items-center ml-4">
+                                <Link href={"/app/newton"}>Utilizar Método</Link>
+                            </div>
                         </div>
                     </div>
-                    ))}
-
-                    
-                </dl>
                 </div>
-            </div>
-        </div>
+
+            </section>
         </>
     )
 }
