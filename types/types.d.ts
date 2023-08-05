@@ -1,4 +1,5 @@
 interface Row {
+  derivative?: string;
   iteration: string;
   result: string;
   error: string;
