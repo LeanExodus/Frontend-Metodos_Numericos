@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { guideModalNewton } from '@/helpers/modals'
-import { guideModal } from '@/helpers/modals'
+import { conceptModalNewton, conceptModalSecant } from '@/helpers/modals'
+
 
 // const metodos = [
 //     {
@@ -23,7 +23,7 @@ export const Landing = () => {
             <section className="bg-gray-100">
 
                 <div className=" text-black p-6 justify-center items-center flex flex-col">
-                    <h1 className="text-5xl font-bold mb-5">Métodos de Búsqueda de Raíces</h1>
+                    <h1 className="text-5xl font-bold mb-5 mt-10">Métodos de Búsqueda de Raíces</h1>
                     <p className="text-xl">Explore el método de la Secante y el método de Newton-Raphson</p>
                 </div>
 
@@ -37,7 +37,7 @@ export const Landing = () => {
                                 x[n+1] = x[n] - f(x[n]) * (x[n] - x[n-1]) / (f(x[n]) - f(x[n-1]))
                             </pre>
                             <div className="inline-block bg-purple-900 hover:bg-purple-800 text-white rounded-md py-4 px-7 font-medium duration-300 items-center gap-2 mt-10">
-                                <button type='button' onClick={guideModal}> Leer Más... </button>
+                                <button type='button' onClick={conceptModalSecant}> Leer Más... </button>
                             </div>
                             <div className="inline-block bg-gray-800 hover:bg-gray-700 text-white rounded-md py-4 px-7 font-medium duration-300 items-center ml-4">
                                 <Link href={"/app/secant"}>Utilizar Método</Link>
@@ -49,10 +49,10 @@ export const Landing = () => {
                             <p className="text-lg">El Método Newton-Raphson es otra técnica iterativa de búsqueda de raíces. Utiliza la derivada de la función para hacer aproximaciones convergentes rápidas a la raíz.</p><br></br>
                             <p className="mt-4 text-lg">La fórmula de iteración de Newton-Raphson es:</p>
                             <pre className="bg-gray-800 text-white p-2 rounded mt-2 text-lg">
-                                x[n+1] = x[n] - f(x[n]) / f'(x[n])
+                                x[n+1] = x[n] - f(x[n]) / f′(x[n])
                             </pre>
                             <div className="inline-block bg-purple-900 hover:bg-purple-800 text-white rounded-md py-4 px-7 font-medium duration-300 items-center gap-2 mt-10">
-                                <button type='button' onClick={guideModalNewton}> Leer Más... </button>
+                                <button type='button' onClick={conceptModalNewton}> Leer Más... </button>
                             </div>
                             <div className="inline-block bg-gray-800 hover:bg-gray-700 text-white rounded-md py-4 px-7 font-medium duration-300 items-center ml-4">
                                 <Link href={"/app/newton"}>Utilizar Método</Link>

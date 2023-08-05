@@ -76,6 +76,37 @@ export const guideModalNewton = () => {
 	});
 };
 
+
+export const conceptModalNewton = () => {
+	Swal.fire({
+		width: 800,
+		text:'El método de Newton-Raphson se basa en la idea de aproximar una raíz de la función mediante una secuencia de valores cada vez más cercanos al valor real de la raíz. La aproximación se mejora iterativamente utilizando la pendiente de la función en el punto actual. La pendiente de una función en un punto dado se conoce como la derivada de la función en ese punto.',
+		imageUrl: 'https://i0.wp.com/static2.mbtfiles.co.uk/media/docs/newdocs/as_and_a_level/maths/core_and_pure_mathematics/908942/html/images/image05.png',
+		imageWidth:'400',
+		imageHeight:'200',
+		confirmButtonText: 'Entendido',
+		customClass: {
+			popup: 'modal-popup',
+			confirmButton: 'modal-confirm-button',
+		},
+	});
+}
+
+export const conceptModalSecant = () => {
+	Swal.fire({
+		width: 800,
+		text:'El método de la secante es utilizada para encontrar aproximaciones de las raíces de una función real. No requiere el cálculo de la derivada, lo que lo hace más flexible y aplicable en una variedad de situaciones. Sin embargo, en algunos casos, el método de la secante puede requerir más iteraciones',
+		imageUrl: 'https://brendamedina93.files.wordpress.com/2014/03/fnsionajdj.png',
+		imageWidth:'500',
+		imageHeight:'200',
+		confirmButtonText: 'Entendido',
+		customClass: {
+			popup: 'modal-popup',
+			confirmButton: 'modal-confirm-button',
+		},
+	});
+}
+
 export const successModal = (text: string) => {
 	Swal.fire({
 		title: 'Éxito!',
@@ -105,3 +136,5 @@ export const yesNoModal = async (
 
 	return result;
 };
+
+
