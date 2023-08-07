@@ -44,7 +44,7 @@ export const AboutUs = () => {
     );
 };
 
-const PersonCard = ({ name, role, imageUrl }) => {
+const PersonCard = ({ name, role, imageUrl }:any) => {
     return (
         <div className="flex items-center mt-4">
             <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
@@ -64,7 +64,7 @@ const PersonCard = ({ name, role, imageUrl }) => {
     );
 };
 
-const SectionHeading = ({ title }) => {
+const SectionHeading = ({ title }:any) => {
     return (
         <h2 className="text-2xl font-semibold mb-4">{title}</h2>
     );
