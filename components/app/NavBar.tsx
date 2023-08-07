@@ -15,6 +15,7 @@ export const NavBar = () => {
                             <Link className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium' href={"/app"}>Inicio</Link>
                             <Link className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium' href={"/app/newton"}>Newton</Link>
                             <Link className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium' href={"/app/secant"}>Secante</Link>
+                            <Link className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium' href={"/app/about"}>Nosotros</Link>
                             <button className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium' onClick={() => { logOut() }}>Salir</button>
                         </div>
 
