@@ -21,8 +21,8 @@ export const AboutUs = () => {
                 </div>
                 <div className="p-6 bg-white rounded shadow">
                     <SectionHeading title="Lorem ipsum" />
-                    <PersonCard name="John Doe" role="Co-founder & CEO" imageUrl="/images/persona1.jpg" />
-                    <PersonCard name="Jane Smith" role="Co-founder & CTO" imageUrl="/images/persona2.jpg" />
+                    <PersonCard name="Persona 1" role="Lorem Ipsum" imageUrl="" /> {/* INSERTAR IMAGEN */}
+                    <PersonCard name="Persona 2" role="Loremp Ipsum" imageUrl="" /> {/* INSERTAR IMAGEN */}
                 </div>
             </div>
             <div className="container mx-auto mt-8 p-6 bg-white rounded shadow">
