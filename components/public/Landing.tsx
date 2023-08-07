@@ -70,7 +70,7 @@ export const Landing = () => {
     )
 }
 
-const MethodCard = ({ title, description, formula, link, buttonText, onClick }) => {
+const MethodCard = ({ title, description, formula, link, buttonText, onClick }:any) => {
     return (
         <div className="bg-white p-6 rounded shadow transform hover:scale-105 transition duration-300">
             <h2 className="text-3xl font-semibold mb-4">{title}</h2>
@@ -90,7 +90,7 @@ const MethodCard = ({ title, description, formula, link, buttonText, onClick }) 
     );
 };
 
-const ServiceCard = ({ title, description, icon }) => {
+const ServiceCard = ({ title, description, icon }:any) => {
     return (
         <div className="bg-gray-100 p-6 rounded-lg flex flex-col items-center shadow transform hover:scale-105 transition duration-300 even:bg-gray-300">
             <div className="text-3xl mb-4">
