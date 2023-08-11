@@ -1,13 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
     input[type='number']::-webkit-outer-spin-button,
     input[type='number']::-webkit-inner-spin-button,
     input[type='number'] {
-      -webkit-appearance: none;
-      margin: 0;
-      -moz-appearance: textfield !important;
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield !important;
     }
- }
+}
+
+::-webkit-scrollbar {
+    width: .6rem;
+    background: rgb(17 24 39);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(88 28 135);
+    border-radius: .5rem;
+}
