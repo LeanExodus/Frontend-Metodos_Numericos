@@ -21,7 +21,7 @@ export const NavBar = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-end">
+                    <div className="flex items-center justify-end space-x-4">
                         <Link href="/app/about" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium pr-3">Nosotros</Link>
                         <div className="border-r-2 border-white h-6"></div>
                         <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium" onClick={() => { logOut() }}>Salir</button>
