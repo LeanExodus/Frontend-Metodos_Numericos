@@ -2,8 +2,9 @@ import Swal, { SweetAlertResult } from 'sweetalert2';
 
 let htmlContent = `<ul>
 <li><b>1) Para el campo de la función se tiene que tomar en cuenta:</b><br><br>
-&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
-&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li>
+&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x"</strong>.<br>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[expresión]<strong>)"</strong>.</li>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una tangente inversa usa <strong>"atan(</strong>[expresión]<strong>)"</strong>.<br>
 <li><b><br>2) Para los campos del intervalo:</b><br><br>
 &nbsp;&nbsp;&nbsp;&#8226 <i><b> Estos campos no son obligatorios</b></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <b>Bolzano.</b><br>
 &nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos <strong>exista</strong> una raíz, de lo contrario <strong>no se calculará.</strong></li>
@@ -18,8 +19,9 @@ let htmlContentNewton =
 	`<ul>
 &nbsp;&nbsp;&nbsp;&#8226 En este metodo puedes usar el intervalo o el valor inicial (<i>Si ya sabes el punto medio.</i>)<br><br>
 <li><b>1) Para el campo de la función se tiene que tomar en cuenta:</b><br><br>
-&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
-&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li><br>
+&nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x"</strong>.<br>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[expresión]<strong>)"</strong>.</li>
+&nbsp;&nbsp;&nbsp;&#8226 Para ingresar una tangente inversa usa <strong>"atan(</strong>[expresión]<strong>)"</strong>.<br><br>
 <li><b>2) Para el campo de valor inicial:</b><br><br>
 &nbsp;&nbsp;&nbsp;&#8226 <i> Este campo no es obligatorio. </i><br>
 &nbsp;&nbsp;&nbsp;&#8226 Este campo es dado por la suma de los puntos de intervalo divido entre 2 <strong>(<i>Punto Medio</i>).</strong><br>
