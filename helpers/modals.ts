@@ -5,7 +5,7 @@ let htmlContent = `<ul>
 &nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
 &nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li>
 <li><b><br>2) Para los campos del intervalo:</b><br><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i><b> Estos campos no son requeridos</b></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <b>Bolzano.</b><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i><b> Estos campos no son obligatorios</b></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <b>Bolzano.</b><br>
 &nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos <strong>exista</strong> una raíz, de lo contrario <strong>no se calculará.</strong></li>
 <li><b><br>3) El campo de la tolerancia:</b><br><br>
 &nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida.<br>
@@ -21,11 +21,11 @@ let htmlContentNewton =
 &nbsp;&nbsp;&nbsp;&#8226 Al querer multiplicar por <strong>"x"</strong> se debe ingresar el símbolo <strong>"*"</strong> antes de la <strong>"x".</strong><br>
 &nbsp;&nbsp;&nbsp;&#8226 Para ingresar una raíz cuadrada se usa <strong>"sqrt(</strong>[función deseada]<strong>)</strong>"(<i><b>Numero al cual queremos sacar la raiz</b></i>).</li><br>
 <li><b>2) Para el campo de valor inicial:</b><br><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i> Este campo no es requerido. </i><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i> Este campo no es obligatorio. </i><br>
 &nbsp;&nbsp;&nbsp;&#8226 Este campo es dado por la suma de los puntos de intervalo divido entre 2 <strong>(<i>Punto Medio</i>).</strong><br>
 &nbsp;&nbsp;&nbsp;&#8226 Usalo solo si tienes conocimiento del <strong>punto medio</strong> o si el problema te lo indica.</li><br>
 <li><b>3) Para los campos del intervalo:</b><br><br>
-&nbsp;&nbsp;&nbsp;&#8226 <i> <strong>Estos campos no son requeridos</strong></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <strong>Bolzano.</strong><br>
+&nbsp;&nbsp;&nbsp;&#8226 <i> <strong>Estos campos no son obligatorios</strong></i>, ya que si no se ingresan la aplicación calculará el intervalo mediante <strong>Bolzano.</strong><br>
 &nbsp;&nbsp;&nbsp;&#8226 Si vas a ingresarlos, procura que entre esos puntos exista una raíz, de lo contrario no se calculará.</li><br>
 <li><b>4) El campo de la tolerancia:</b><br><br>
 &nbsp;&nbsp;&nbsp;&#8226 Este campo determina el nivel de precisión requerida.<br>
