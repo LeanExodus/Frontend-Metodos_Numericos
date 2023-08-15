@@ -5,7 +5,7 @@ import { conceptModalNewton, conceptModalSecant } from '@/helpers/modals'
 export const Landing = () => {
     return (
         <>
-            <section className="bg-gray-100">
+            <section className="bg-gray-100" id="metodos">
                 <div className="py-10 justify-center items-center flex flex-col bg-gray-900 text-white">
                     <h1 className="text-5xl font-bold mb-5 mt-10">¡Métodos de Búsqueda de Raíces!</h1>
                     <p className="text-xl">Explore el método de la Secante y el método de Newton-Raphson</p>
@@ -13,20 +13,20 @@ export const Landing = () => {
                 <div className="container mx-auto flex justify-center items-center min-h-[72vh]">
                     <div className="grid grid-cols-1 md:grid-cols-2 w-[95%] gap-8 md:gap-12">
                         <MethodCard
-                            title="Método Secante"
-                            description="El método de la secante es una técnica numérica para encontrar la raíz de una función de valor real. Utiliza una secuencia de aproximaciones a la raíz."
-                            formula="x[n+1] = x[n] - f(x[n]) * (x[n] - x[n-1]) / (f(x[n]) - f(x[n-1]))"
-                            link="/app/secant"
-                            buttonText="Utilizar Método"
-                            onClick={conceptModalSecant}
-                        />
-                        <MethodCard
                             title="Método de Newton-Raphson"
                             description="El Método Newton-Raphson es otra técnica iterativa de búsqueda de raíces. Utiliza la derivada de la función para hacer aproximaciones convergentes rápidas a la raíz."
                             formula="x[n+1] = x[n] - f(x[n]) / f′(x[n])"
                             link="/app/newton"
                             buttonText="Utilizar Método"
                             onClick={conceptModalNewton}
+                        />
+                        <MethodCard
+                            title="Método Secante"
+                            description="El método de la secante es una técnica numérica para encontrar la raíz de una función de valor real. Utiliza una secuencia de aproximaciones a la raíz."
+                            formula="x[n+1] = x[n] - f(x[n]) * (x[n] - x[n-1]) / (f(x[n]) - f(x[n-1]))"
+                            link="/app/secant"
+                            buttonText="Utilizar Método"
+                            onClick={conceptModalSecant}
                         />
                     </div>
                 </div>
@@ -61,8 +61,8 @@ export const Landing = () => {
                 <div className="container mx-auto text-center">
                     <h2 className="text-4xl font-semibold mb-4">Únete a Nosotros en la Revolución del Aprendizaje</h2>
                     <p className="text-lg mb-8">Descubre cómo nuestros métodos de búsqueda de raíces pueden transformar tu comprensión de las matemáticas.</p>
-                    <Link href="/app/about" className="inline-block bg-purple-900 hover:bg-purple-800 text-white py-3 px-8 rounded-md text-lg font-semibold transition duration-300" passHref>
-                        ¡Conócenos!
+                    <Link href="#metodos" className="inline-block bg-purple-900 hover:bg-purple-800 text-white py-3 px-8 rounded-md text-lg font-semibold transition duration-300" passHref>
+                        ¡Métodos!
                     </Link>
                 </div>
             </section>
@@ -70,7 +70,7 @@ export const Landing = () => {
     )
 }
 
-const MethodCard = ({ title, description, formula, link, buttonText, onClick }:any) => {
+const MethodCard = ({ title, description, formula, link, buttonText, onClick }: any) => {
     return (
         <div className="bg-white p-6 rounded shadow transform hover:scale-105 transition duration-300">
             <h2 className="text-3xl font-semibold mb-4">{title}</h2>
@@ -90,7 +90,7 @@ const MethodCard = ({ title, description, formula, link, buttonText, onClick }:a
     );
 };
 
-const ServiceCard = ({ title, description, icon }:any) => {
+const ServiceCard = ({ title, description, icon }: any) => {
     return (
         <div className="bg-gray-100 p-6 rounded-lg flex flex-col items-center shadow transform hover:scale-105 transition duration-300 even:bg-gray-300">
             <div className="text-3xl mb-4">
